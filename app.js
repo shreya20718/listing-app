@@ -187,6 +187,7 @@ app.get("/search", async (req, res) => {
    res.render("listings/index.ejs", { alllisting, category: `Search: ${location}` });
 });
 
-app.listen(8080,()=>{
-   console.log("listening to the port");
-}); 
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
