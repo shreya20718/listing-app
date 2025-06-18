@@ -112,6 +112,10 @@ if(req.session.redirectUrl) {
 
 //const reviews = require("./route/review.js");
 
+app.get('/', (req, res) => {
+  res.render('listings/index.ejs');        // for an EJS template named `home.ejs`
+});
+
 app.get("/signup",usercontroller.signup); 
 
 app.post("/signup", usercontroller.signupPost);
