@@ -1,0 +1,71 @@
+<%layout("/layouts/boilerplate.ejs")%>
+
+
+<body>
+
+   <div class="row">
+      <div class="col-8 offset-2">
+        <br><br>
+    <h3>create new listing</h3>
+        <form method="POST" action="/listings" novalidate class="needs-validation" enctype="multipart/form-data">
+            
+         <div class="mb-3">
+         <label for="title" class="form-label">Title</label>
+       <input type="text" name="listing[title]"  id="title" placeholder="add a catchy title" class="form-control" required>
+       </div>
+       <div class="valid-feedback">
+         title looks good!
+       </div>
+          
+            <div class="mb-3">
+               <label for="description" class="form-label">description</label>
+            <textarea type="text" name="listing[description]" id="description" placeholder="" class="form-control" required></textarea>
+            </div>
+            
+            
+              
+               <div class="mb-3">
+                <label for="image" class="form-label">Upload listing image</label>
+               <input type="file" name="listing[image]" id="image" placeholder="enter the image url/Link" class="form-control" required>
+               </div>
+               <div class="row">
+               <div class="mb-3 col-4">
+                 <label for="price" class="form-label">price</label>
+                  <input type="number" name="listing[price]" id="price" placeholder="1200" class="form-control" required>
+               </div>
+                   <div class="mb-3 col-8">
+                         <label for="country" class="form-label">country</label>
+                        <input type="text" id="country" name="listing[country]" placeholder="India" class="form-control" required>
+                        <br>
+                  </div>
+                  </div>
+               <div class="mb-3">
+                   <label for="location" class="form-label">location</label>
+                     <input type="text" id="location" name="listing[location]" placeholder="Jaipur,Rajasthan" class="form-control" required >
+                     </div>
+                    
+                     <div class="mb-3">
+                        <label for="type">Type of Listing</label>
+                        <select name="listing[category]" id="type" >
+                           <option value="mountain">mountain</option>
+                            <option value="snow area">snow area</option>
+                             <option value="farms">farms</option>
+                            <option value="pools">pools</option>
+                             <option value="city">city</option>
+                             <option value="castles">castles</option>
+                            <option value="camping">camping</option>
+                             <option value="rooms">rooms</option>
+                               <option value="beach">beach</option>
+                                 <option value="dome">dome</option>
+                        </select>
+                     </div>
+                    
+                           <button  class="btn btn-dark add-btn" type="submit">Add</button>
+                           <br>
+
+        </form>
+        <br><br><br><br><br>
+        </div>
+        </div>
+</body>
+</html>

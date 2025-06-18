@@ -1,0 +1,22 @@
+<%layout("/layouts/boilerplate.ejs")%>
+
+<h1>Listings in Category: <%= category %></h1>
+<div class="row row-cols-lg-3 row-cols-md-3 row-cols-sm-3 mt-3">
+
+<% if (alllisting.length === 0) { %>
+  <p>No listings found in this category.</p>
+  <div class="card col listing-card" style="width: 18rem;">
+<% } else { %>
+  <ul>
+    <% alllisting.forEach(listing => { %>
+      <li>
+        <h3><%= listing.title %></h3>
+        <p><%= listing.description %></p>
+        <p>Price: ₹<%= listing.price %></p>
+        <p>Location: <%= listing.location %>, <%= listing.country %></p>
+      </li>
+    <% }) %>
+  </ul>
+<% } %>
+</div>
+</div>
