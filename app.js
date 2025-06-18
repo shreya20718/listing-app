@@ -112,8 +112,9 @@ if(req.session.redirectUrl) {
 
 //const reviews = require("./route/review.js");
 
-app.get('/', (req, res) => {
-  res.render('listings/index.ejs');        // for an EJS template named `home.ejs`
+app.get('/', async (req, res) => {
+  const alllisting = await listing.find({});
+  res.render('listings/index', { alllisting, category: 'All Listings' });
 });
 
 app.get("/signup",usercontroller.signup); 
